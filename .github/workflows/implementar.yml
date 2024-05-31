@@ -1,0 +1,13 @@
+name: Construir una App en NEXTJS
+on: push
+jobs:
+    build-project:
+        name: Construccion del Proyecto
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout del codigo
+              uses: actions/checkout@v4
+            - name: Instalar Dependencias
+              run: npm install
+            - name: Ejecutar en produccion
+              run: npm run build
