@@ -2,7 +2,7 @@ name: Construir una App en NEXTJS
 on: push
 jobs:
     build-project:
-        name: Construccion del Proyecto
+        name: Build el Proyecto
         runs-on: ubuntu-latest
         steps:
             - name: Checkout del codigo
@@ -17,8 +17,9 @@ jobs:
                 name: nuevo-sitio
                 path: .next/
     download-project:
-        name: Construccion del Proyecto
+        name: Download el Proyecto
         runs-on: ubuntu-latest
+        needs: build-project
         steps:
             - name: Descargar artefacto
               uses: actions/download-artifact@v4
